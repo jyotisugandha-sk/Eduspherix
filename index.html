@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSpherix - Innovative School Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-blue': '#1E3A8A',
+                        'brand-orange': '#F97316',
+                        'brand-green': '#16A34A',
+                        'brand-purple': '#6D28D9',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .counter {
+            transition: all 0.5s ease;
+        }
+    </style>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+    <!-- Sticky Navbar -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+   			 <img src="images/logo.jpeg" alt="EduSpherix Logo" class="h-14 w-auto">
+
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-deep-blue transition">Home</a>
+                    <a href="#features" class="text-gray-700 hover:text-deep-blue transition">Features</a>
+                    <a href="#modules" class="text-gray-700 hover:text-deep-blue transition">Modules</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-deep-blue transition">Pricing</a>
+                    <a href="#contact" class="text-gray-700 hover:text-deep-blue transition">Contact</a>
+                </div>
+                <a href="#demoForm"
+   class="bg-brand-orange text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition">
+   Book Demo
+</a>
+
+                    <div class="md:hidden">
+                        <button class="text-gray-700 focus:outline-none" id="mobile-menu-button">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#home" class="block text-gray-700 hover:text-deep-blue">Home</a>
+                    <a href="#features" class="block text-gray-700 hover:text-deep-blue">Features</a>
+                    <a href="#modules" class="block text-gray-700 hover:text-deep-blue">Modules</a>
+                    <a href="#pricing" class="block text-gray-700 hover:text-deep-blue">Pricing</a>
+                    <a href="#contact" class="block text-gray-700 hover:text-deep-blue">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-deep-blue to-brand-purple text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Innovative Digital Solution for Modern Schools</h1>
+                <p class="text-lg md:text-xl mb-8">Streamline school operations with our comprehensive management system. Enhance efficiency, improve communication, and scale effortlessly for schools of all sizes.</p>
+                <button class="bg-brand-orange text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600 transition transform hover:scale-105">Request Free Demo</button>
+            </div>
+            <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+    	<img src="images/logo.jpeg" 
+         alt="EduSpherix Logo" 
+         class="w-80 md:w-90rounded-lg shadow-xl">
+	</div>
+
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-10 text-deep-blue">About EduSpherix</h2>
+            <p class="text-lg text-center max-w-3xl mx-auto">EduSpherix is a cutting-edge School Management System designed to automate and digitize school operations. From seamless parent communication to scalable infrastructure, we empower educational institutions to focus on what matters most – nurturing young minds. Our cloud-based platform ensures security, ease of use, and affordability, making it ideal for Indian schools.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-10 text-deep-blue">Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-blue">Student Management</h3>
+                    <p>Comprehensive student profiles with easy enrollment and tracking.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-orange">Attendance Tracking</h3>
+                    <p>Real-time attendance monitoring with automated reports.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-orange">Parent Portal</h3>
+                    <p>Direct communication channel for parents to stay updated.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-orange">Marks & Reports</h3>
+                    <p>Generate detailed academic reports and performance analytics.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-orange">Fees Management</h3>
+                    <p>Streamlined fee collection and payment tracking.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-orange">Transport & Holidays</h3>
+                    <p>Manage school transport and holiday schedules efficiently.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="modules" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-10 text-deep-blue">Our Modules</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-purple">Dashboard</h3>
+                    <p>Centralized overview of school activities and metrics.</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-purple">Teacher Module</h3>
+                    <p>Tools for teachers to manage classes and assignments.</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-purple">Student Module</h3>
+                    <p>Personalized student dashboards and resources.</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-purple">Attendance</h3>
+                    <p>Automated attendance tracking and reporting.</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-purple">Notice Board</h3>
+                    <p>Digital notices and announcements.</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-purple">Timetable</h3>
+                    <p>Dynamic scheduling and timetable management.</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-purple">Syllabus</h3>
+                    <p>Structured syllabus planning and tracking.</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-purple">Notes</h3>
+                    <p>Digital note-sharing and collaboration.</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-purple">Marks</h3>
+                    <p>Grade entry and performance analysis.</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-purple">Fees</h3>
+                    <p>Comprehensive fee management system.</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-purple">Bus Service</h3>
+                    <p>Transport route and student assignment.</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-purple">Accountant</h3>
+                    <p>Financial reporting and budgeting tools.</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-4 text-brand-purple">Settings</h3>
+                    <p>Customizable system configurations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Stats Counter Section -->
+    <section class="py-20 bg-gradient-to-r from-brand-green to-deep-blue text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-10">Our Impact</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="text-5xl font-bold counter" data-target="15">0</div>
+                    <p class="text-xl mt-4">Modules</p>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold counter" data-target="1000">0</div>
+                    <p class="text-xl mt-4">Student Capacity</p>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold counter" data-target="24">0</div>
+                    <p class="text-xl mt-4">Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-10 text-deep-blue">Why Choose EduSpherix?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-6xl text-brand-green mb-4">🔒</div>
+                    <h3 class="text-xl font-semibold mb-2">Security</h3>
+                    <p>Top-tier data protection and compliance.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl text-brand-purple mb-4">☁️</div>
+                    <h3 class="text-xl font-semibold mb-2">Cloud-Based</h3>
+                    <p>Accessible from anywhere, anytime.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl text-brand-orange mb-4">👌</div>
+                    <h3 class="text-xl font-semibold mb-2">Easy to Use</h3>
+                    <p>Intuitive interface for all users.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl text-deep-blue mb-4">💰</div>
+                    <h3 class="text-xl font-semibold mb-2">Affordable</h3>
+                    <p>Tailored pricing for Indian schools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-10 text-deep-blue">Pricing Plans</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4">Month Plan</h3>
+                    <p class="text-4xl font-bold mb-4">₹2500<span class="text-lg">/month</span></p>
+                    <ul class="mb-6">
+                        <li>Up to 200 students</li>
+                        <li>Core modules</li>
+                        <li>Email support</li>
+                    </ul>
+                    <button class="bg-gray-300 text-gray-700 px-6 py-3 rounded-lg w-full">Choose Plan</button>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border-4 border-brand-orange transform scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">Standard</h3>
+                    <p class="text-4xl font-bold mb-4">₹25,000<span class="text-lg">/year</span></p>
+                    <ul class="mb-6">
+                        <li>Up to 500 students</li>
+                        <li>All modules</li>
+                        <li>24/7 support</li>
+                    </ul>
+                    <button class="bg-brand-orange text-white px-6 py-3 rounded-lg w-full hover:bg-orange-600">Choose Plan</button>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4">Premium</h3>
+                    <p class="text-4xl font-bold mb-4"><span class="text-lg">/year</span></p>
+                    <ul class="mb-6">
+                        <li>Unlimited students</li>
+                        <li>Custom integrations</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <button class="bg-gray-300 text-gray-700 px-6 py-3 rounded-lg w-full">Choose Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-10 text-deep-blue">Contact Us</h2>
+            <form class="max-w-lg mx-auto bg-gray-100 p-8 rounded-lg shadow-md">
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2">School Name</label>
+                    <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-deep-blue">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2">Email</label>
+                    <input type="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-deep-blue">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2">Phone</label>
+                    <input type="tel" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-deep-blue">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 mb-2">Message</label>
+                    <textarea class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-deep-blue" rows="4"></textarea>
+                </div>
+                <button type="submit" class="bg-brand-orange text-white px-6 py-3 rounded-lg w-full hover:bg-orange-600 transition">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deep-blue text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-2xl font-bold mb-2">EduSpherix</h3>
+            <p class="mb-4">Innovative School Management</p>
+    </div>
+<section id="demoForm" class="py-20 bg-black-100">
+  <div class="max-w-3xl mx-auto bg-white p-10 rounded-xl shadow-lg">
+    <h2 class="text-3xl font-bold text-center mb-8 text-deep-blue">
+      Book a Free Demo
+    </h2>
+
+    <form id="demoBookingForm" class="space-y-6">
+
+<input type="text" name="name" placeholder="Your Name"
+required
+class="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+<input type="email" name="email" placeholder="Email Address"
+required
+class="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+<input type="tel" name="phone" placeholder="Phone Number"
+required
+class="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+<input type="text" name="school" placeholder="School Name"
+required
+class="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+<textarea name="address" placeholder="School Address"
+required
+class="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+
+<button type="submit"
+class="w-full bg-orange-500 text-white py-3 rounded-xl hover:bg-orange-600 transition duration-300">
+Book Demo
+</button>
+
+</form>
+
+
+  </div>
+</section>
+
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll(".counter");
+
+    counters.forEach(counter => {
+        const target = +counter.getAttribute("data-target");
+        let count = 0;
+        const speed = 20;
+
+        const updateCounter = () => {
+            const increment = target / 100;
+            count += increment;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count);
+                setTimeout(updateCounter, speed);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        updateCounter();
+    });
+});
+</script>
+
+<script>
+const form = document.getElementById("demoBookingForm");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let valid = true;
+
+    const inputs = form.querySelectorAll("input, textarea");
+
+    inputs.forEach(input => {
+        if (!input.value.trim()) {
+            input.classList.add("border-red-500");
+            valid = false;
+        } else {
+            input.classList.remove("border-red-500");
+        }
+    });
+
+    if (!valid) {
+        alert("Please fill all required fields!");
+        return;
+    }
+
+    const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        school: form.school.value,
+        address: form.address.value
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbwpyH_Ugj7w7a2YMi435iy-w3z6AzTOKx2g7sgaIvTDoT_ATCAXUTinfMDEztd4tSSMNA/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.text())
+   .then(data => {
+    showSuccess();
+
+    // 🎉 Confetti Celebration
+    confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 }
+    });
+
+    form.reset();
+})
+
+    .catch(error => {
+        alert("Something went wrong!");
+        console.error(error);
+    });
+});
+
+function showSuccess() {
+    const successDiv = document.createElement("div");
+    successDiv.innerHTML = `
+        <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+            <div class="bg-white p-10 rounded-2xl text-center shadow-xl">
+                <h2 class="text-3xl font-bold text-green-600 mb-4">🎉 Demo Booked Successfully!</h2>
+                <p class="text-gray-700">Our team will contact you soon.</p>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(successDiv);
+
+    setTimeout(() => {
+        successDiv.remove();
+    }, 3000);
+}
+
+
+</script>
+
+
+</body>
+</html>
+
+           
